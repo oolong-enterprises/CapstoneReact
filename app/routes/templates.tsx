@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useLoaderData, Link, useNavigate } from "react-router";
 import "./templates.css";
@@ -23,7 +22,7 @@ type Template = {
 const API_URL =
   import.meta.env.VITE_API_URL || "http://localhost:8080";
 
-// Fetch templates in the browser (required for SPA mode)
+// Fetch templates in the browser
 export async function clientLoader() {
   const response = await fetch(`${API_URL}/api/template`);
 
