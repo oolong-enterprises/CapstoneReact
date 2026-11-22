@@ -11,7 +11,6 @@ export default function Home() {
         <div className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/templates">Templates</Link>
-          <Link to="/about">About</Link>
         </div>
       </nav>
 
