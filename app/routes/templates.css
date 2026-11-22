@@ -1,0 +1,385 @@
+
+/* ---------- Base ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  background: #f5f7fa;
+  color: #202733;
+}
+
+.template-workspace {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 48px 40px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ---------- Template Grid ---------- */
+
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+/* ---------- Template Cards ---------- */
+
+.template-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 12px;
+  background: white;
+  border: 1px solid #e2e7ee;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  color: inherit;
+}
+
+.template-card:hover {
+  border-color: #b8c8df;
+  box-shadow: 0 6px 18px rgba(30, 50, 80, 0.08);
+  transform: translateY(-2px);
+}
+
+.template-card.active {
+  border: 2px solid #3976df;
+  padding: 11px;
+  background: #f8fbff;
+  box-shadow: 0 0 0 3px rgba(57, 118, 223, 0.08);
+}
+
+/* ---------- Template Preview ---------- */
+
+.template-art {
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.template-art.green {
+  background: linear-gradient(145deg, #edf3ed, #dce8dc);
+}
+
+.template-icon {
+  font-size: 64px;
+  color: #506b55;
+  transition: transform 0.2s ease;
+}
+
+.template-card:hover .template-icon {
+  transform: scale(1.08);
+}
+
+/* ---------- Template Information ---------- */
+
+.template-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 2px;
+}
+
+.template-info > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.template-info strong {
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.template-info span:not(.template-icon) {
+  color: #7b8491;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* ---------- Selection Indicator ---------- */
+
+.selection-indicator {
+  flex-shrink: 0;
+  width: 23px;
+  height: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #3976df;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.template-card:not(.active) .selection-indicator {
+  background: #f0f2f5;
+  border: 1px solid #dce1e8;
+}
+
+/* ---------- Model Description ---------- */
+
+.model-description {
+  background: white;
+  border: 1px solid #e2e7ee;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 4px 15px rgba(30, 50, 80, 0.04);
+  position: sticky;
+  top: 24px;
+}
+
+.model-description h2 {
+  margin: 0 0 10px;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.model-description > p {
+  margin: 0 0 28px;
+  color: #7b8491;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ---------- Parameter Form ---------- */
+
+.parameter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.parameter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.parameter-field > span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #414957;
+}
+
+/* ---------- Input Fields ---------- */
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dce2e9;
+  border-radius: 8px;
+  background: #fafbfc;
+  transition: 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: #3976df;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(57, 118, 223, 0.1);
+}
+
+.input-wrapper input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #202733;
+}
+
+.input-wrapper input::-webkit-inner-spin-button,
+.input-wrapper input::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.input-wrapper > span {
+  padding: 0 14px;
+  color: #9099a6;
+  font-size: 12px;
+}
+
+.parameter-field small {
+  color: #929aa6;
+  font-size: 11px;
+}
+
+.dimension-control {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dimension-control input[type="range"] {
+  width: 100%;
+  accent-color: #3976df;
+  cursor: pointer;
+}
+
+.dimension-value {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 110px;
+  padding: 9px 12px;
+  border: 1px solid #dce2e9;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.dimension-value input {
+  width: 65px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #202733;
+}
+
+.dimension-value span {
+  font-size: 12px;
+  color: #9099a6;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1000px) {
+  .template-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .model-description {
+    position: static;
+  }
+
+  .template-grid {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .template-workspace {
+    padding: 24px 16px;
+    gap: 24px;
+  }
+
+  .template-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .template-art {
+    height: 110px;
+  }
+
+  .template-icon {
+    font-size: 48px;
+  }
+
+  .model-description {
+    padding: 20px;
+  }
+}
+
+.generate-button {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  border: none;
+  border-radius: 9px;
+  background: #3976df;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.generate-button:hover {
+  background: #285fbd;
+}
+
+.generate-button:disabled {
+  background: #9aafd4;
+  cursor: wait;
+}
+
+
+/* Navigation bar */
+
+.top-navbar {
+  height: 70px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e9ef;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 19px;
+  font-weight: 700;
+  color: #202733;
+}
+
+.brand-icon {
+  color: #3976df;
+  font-size: 25px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #737d8b;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbar-links a:hover,
+.navbar-links a.nav-active {
+  color: #3976df;
+}
+
+.navbar-links a.nav-active {
+  font-weight: 650;
+}
+
+@media (max-width: 600px) {
+  .top-navbar {
+    padding: 0 18px;
+  }
+
+  .navbar-links {
+    gap: 16px;
+  }
+}

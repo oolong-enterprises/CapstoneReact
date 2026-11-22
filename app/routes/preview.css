@@ -1,0 +1,144 @@
+
+.preview-page {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.preview-header h1 {
+  margin: 0 0 8px;
+  color: #202733;
+}
+
+.preview-header p {
+  color: #737d8b;
+  margin: 0;
+}
+
+.back-button {
+  text-decoration: none;
+  color: #3976df;
+  font-weight: 600;
+}
+
+.preview-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+}
+
+.viewer-container {
+  min-height: 550px;
+  background: #f4f6f9;
+  border: 1px solid #e5e9ef;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewer-placeholder {
+  text-align: center;
+  color: #737d8b;
+}
+
+.placeholder-icon {
+  font-size: 60px;
+  color: #3976df;
+  margin-bottom: 15px;
+}
+
+.viewer-placeholder h2 {
+  color: #202733;
+}
+
+.preview-sidebar {
+  background: white;
+  border: 1px solid #e5e9ef;
+  border-radius: 12px;
+  padding: 24px;
+  height: fit-content;
+}
+
+.preview-sidebar h2 {
+  margin-top: 0;
+  color: #202733;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e9ef;
+}
+
+.detail-item span {
+  color: #737d8b;
+  font-size: 13px;
+}
+
+.detail-item strong {
+  color: #202733;
+}
+
+.download-button {
+  width: 100%;
+  margin-top: 24px;
+  padding: 13px;
+  border: none;
+  border-radius: 7px;
+  background: #3976df;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.download-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 800px) {
+  .preview-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-header {
+    align-items: flex-start;
+    gap: 20px;
+    flex-direction: column;
+  }
+}
+
+.viewer-container {
+  height: 550px;
+  min-width: 0;
+  background: #f4f6f9;
+  border: 1px solid #e5e9ef;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.viewer-container canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.download-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.download-button:not(:disabled) {
+  opacity: 1;
+  cursor: pointer;
+}
